@@ -1,0 +1,78 @@
+@mixin shadow($level: 1, $background: black) {
+       @if $level == 1 { box-shadow: 0 1px   3px rgba(0,0,0,0.12), 0   1px 2px rgba($background,0.24) }
+  @else if $level == 2 { box-shadow: 0 3px   6px rgba(0,0,0,0.16), 0   3px 6px rgba($background,0.23) }
+  @else if $level == 3 { box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0   6px 6px rgba($background,0.23) }
+  @else if $level == 4 { box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba($background,0.22) }
+  @else if $level == 5 { box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba($background,0.22) }
+}
+
+.card {
+  @include shadow(1);
+  // focus isn't going to be visible unless it has an href or a tabindex
+  &:hover,&:focus {
+    @include shadow(2);
+    transform: translateY(-3px);
+  }
+  &:active, &.active {
+    @include shadow(3);
+    transform: translateY(-2px);
+  }
+}
+
+
+.card {
+  cursor: pointer;;
+	display: block;
+	padding: 0px;
+	background-color: #ffffff;
+	border-radius: 3px;
+  height: 350px;
+  margin-top:0px;
+	header {
+		padding: 16px;
+    clear: both;
+    height: content-height;
+    .avatar, .userName{
+      display: inline-block;
+      vertical-align: middle;
+    }
+		.avatar {
+			width:  30px;
+			height: 30px;
+			background-color: #dddddd;
+			background-image: url(http://www.msudenver.edu/media/sampleassets/profile-placeholder.png);
+			background-size: cover;
+			margin: 0 16px 0 0;
+			padding: 0;
+			border-radius: 50%;
+		}
+    .card-title{
+      margin-bottom: 0px;
+    }
+	}
+	div.supporting_text {
+		padding: 16px;
+		p {
+			line-height: 2;
+			margin: 0;
+			padding: 0 0 8px;
+		}
+	}
+	figure.rich_media {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: #DDDDDD;
+		background-size: cover;
+		background-repeat: no-repeat;
+		&:before {
+			content: "";
+			display: block;
+			padding-top: 56.25%;
+		}
+		&#image_1 {
+			background-image: url(http://www.wallpapereast.com/static/cache/2d/00/2d003f11fbcbe8095e854cf87530e5ae.jpg);
+		}
+	}
+}

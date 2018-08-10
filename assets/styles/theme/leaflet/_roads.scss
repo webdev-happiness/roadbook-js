@@ -1,0 +1,10 @@
+.leaflet-interactive{
+  z-index: 300;
+	stroke-width: 5px;
+}
+
+.leaflet-interactive.is-active{
+  z-index: 401!important;
+	stroke: #da4566;
+	stroke-width: 5px;
+}

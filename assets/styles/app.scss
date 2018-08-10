@@ -1,0 +1,25 @@
+@import 'base/resets';
+@import 'base/base';
+@import 'layout/grid';
+
+@import 'theme/fonts';
+@import 'theme/colors';
+@import 'theme/card';
+@import 'theme/leaflet/popup';
+@import 'theme/leaflet/roads';
+
+body{
+  background-color: $bg-color;
+  padding: 0 1.5% 0 1.5%;
+}
+
+#map{
+  background: $bg-color;
+  position: sticky;
+  height: 100vh;
+  width: 100%;
+}
+
+.js-road:nth-child(4n) {
+  margin-left: 0px;
+}
